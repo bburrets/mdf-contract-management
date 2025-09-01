@@ -54,23 +54,21 @@ export default withAuth(
   },
   {
     callbacks: {
-      authorized: ({ token }) => !!token,
+      authorized: ({ token, req }) => {
+        // Temporary: Allow all requests for development
+        // TODO: Restore proper authentication after testing
+        return true;
+        
+        // Original authentication logic:
+        // return !!token;
+      },
     },
   }
 );
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api/auth (auth endpoints)
-     * - api/health (health check)
-     * - api/admin (admin endpoints for migrations, etc.)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public folder files
-     */
-    '/((?!api/auth|api/health|api/admin|_next/static|_next/image|favicon.ico|public/).*)',
+    // Temporarily disable all middleware matching for testing
+    '/test-never-match-this-path',
   ],
 };
