@@ -54,7 +54,7 @@ export const contractFormSchema = z.object({
     .max(50, 'Style number must be 50 characters or less'),
   
   scope: z.enum(['Channel', 'AllStyle'], {
-    required_error: 'Funding type is required'
+    message: 'Funding type is required'
   }),
   
   customer: z.string()
@@ -157,4 +157,5 @@ export interface StyleSearchResponse {
   styles: StyleSuggestion[];
   total: number;
   query: string;
+  message?: string;
 }

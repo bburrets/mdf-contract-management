@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     const schemaErrors: Record<string, string> = {};
     
     if (!schemaValidation.success) {
-      schemaValidation.error.errors.forEach((err) => {
+      schemaValidation.error.issues.forEach((err: any) => {
         const path = err.path.join('.');
         schemaErrors[path] = err.message;
       });
@@ -78,7 +78,7 @@ async function validateBusinessRules(data: ContractFormInput) {
         errors.allocations = `Channel allocations ($${totalAllocated.toFixed(2)}) must equal total amount ($${data.total_committed_amount.toFixed(2)})`;
       }
 
-      const totalPercentage = data.allocations.inline_percentage + data.allocations.ecomm_percentage;
+      const totalPercentage = (data.allocations.inline_percentage || 0) + (data.allocations.ecomm_percentage || 0);
       if (Math.abs(totalPercentage - 100) > 0.01) {
         errors.allocations = `Channel percentages (${totalPercentage.toFixed(1)}%) must total 100%`;
       }

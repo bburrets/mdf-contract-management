@@ -109,7 +109,7 @@ describe('Style Search and Channel Allocation Interactions', () => {
       render(<ContractFormPage />);
       
       // Select a style first
-      const styleInput = screen.getByPlaceholder('Search by style number, item number, or description...');
+      const styleInput = screen.getByPlaceholderText('Search by style number, item number, or description...');
       await user.type(styleInput, 'STY001');
       
       await waitFor(() => {
@@ -146,7 +146,7 @@ describe('Style Search and Channel Allocation Interactions', () => {
       render(<ContractFormPage />);
       
       // Setup initial state
-      const styleInput = screen.getByPlaceholder('Search by style number, item number, or description...');
+      const styleInput = screen.getByPlaceholderText('Search by style number, item number, or description...');
       await user.type(styleInput, 'STY002');
       await waitFor(() => screen.getByText('STY002 - Classic Shirt'));
       await user.click(screen.getByText('STY002 - Classic Shirt'));
@@ -190,7 +190,7 @@ describe('Style Search and Channel Allocation Interactions', () => {
       render(<ContractFormPage />);
       
       // Setup with style and allocations
-      const styleInput = screen.getByPlaceholder('Search by style number, item number, or description...');
+      const styleInput = screen.getByPlaceholderText('Search by style number, item number, or description...');
       await user.type(styleInput, 'STY003');
       await waitFor(() => screen.getByText('STY003 - Kids Sneakers'));
       await user.click(screen.getByText('STY003 - Kids Sneakers'));
@@ -226,7 +226,7 @@ describe('Style Search and Channel Allocation Interactions', () => {
       const user = userEvent.setup();
       render(<ContractFormPage />);
       
-      const styleInput = screen.getByPlaceholder('Search by style number, item number, or description...');
+      const styleInput = screen.getByPlaceholderText('Search by style number, item number, or description...');
       
       // Type rapidly (simulating fast typing)
       await user.type(styleInput, 'S');
@@ -277,7 +277,7 @@ describe('Style Search and Channel Allocation Interactions', () => {
       const user = userEvent.setup();
       render(<ContractFormPage />);
       
-      const styleInput = screen.getByPlaceholder('Search by style number, item number, or description...');
+      const styleInput = screen.getByPlaceholderText('Search by style number, item number, or description...');
       await user.type(styleInput, 'STY');
       
       // Should show loading state
@@ -297,7 +297,7 @@ describe('Style Search and Channel Allocation Interactions', () => {
       render(<ContractFormPage />);
       
       // Select first style and set up allocations
-      const styleInput = screen.getByPlaceholder('Search by style number, item number, or description...');
+      const styleInput = screen.getByPlaceholderText('Search by style number, item number, or description...');
       await user.type(styleInput, 'STY001');
       await waitFor(() => screen.getByText('STY001 - Premium Jacket'));
       await user.click(screen.getByText('STY001 - Premium Jacket'));
@@ -340,7 +340,7 @@ describe('Style Search and Channel Allocation Interactions', () => {
       render(<ContractFormPage />);
       
       // Select style and set up Channel scope
-      const styleInput = screen.getByPlaceholder('Search by style number, item number, or description...');
+      const styleInput = screen.getByPlaceholderText('Search by style number, item number, or description...');
       await user.type(styleInput, 'premium');
       await waitFor(() => screen.getByText('STY001 - Premium Jacket'));
       await user.click(screen.getByText('STY001 - Premium Jacket'));
@@ -406,7 +406,7 @@ describe('Style Search and Channel Allocation Interactions', () => {
       render(<ContractFormPage />);
       
       // Enter invalid style
-      const styleInput = screen.getByPlaceholder('Search by style number, item number, or description...');
+      const styleInput = screen.getByPlaceholderText('Search by style number, item number, or description...');
       await user.type(styleInput, 'INVALID');
       
       // No results should be shown
@@ -451,7 +451,7 @@ describe('Style Search and Channel Allocation Interactions', () => {
       render(<ContractFormPage />);
       
       // Start typing style number
-      const styleInput = screen.getByPlaceholder('Search by style number, item number, or description...');
+      const styleInput = screen.getByPlaceholderText('Search by style number, item number, or description...');
       await user.type(styleInput, 'classic');
       
       // Select from search results
@@ -511,7 +511,7 @@ describe('Style Search and Channel Allocation Interactions', () => {
       render(<ContractFormPage />);
       
       // Select style first
-      const styleInput = screen.getByPlaceholder('Search by style number, item number, or description...');
+      const styleInput = screen.getByPlaceholderText('Search by style number, item number, or description...');
       await user.type(styleInput, 'jacket');
       await waitFor(() => screen.getByText('STY001 - Premium Jacket'));
       await user.click(screen.getByText('STY001 - Premium Jacket'));

@@ -137,7 +137,6 @@ export default function StyleSelector({ value, onChange, error }: StyleSelectorP
         label="Style Number"
         required
         error={error}
-        helpText="Start typing to search for styles by number, description, or item number"
       >
         <div className="relative">
           <input

@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     if (!validationResult.success) {
       const errors: Record<string, string> = {};
       
-      validationResult.error.errors.forEach((err) => {
+      validationResult.error.issues.forEach((err: any) => {
         const path = err.path.join('.');
         errors[path] = err.message;
       });

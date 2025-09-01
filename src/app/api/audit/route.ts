@@ -29,8 +29,8 @@ export async function GET(request: NextRequest) {
 
     const { entries, total } = await getAuditTrail({
       contractId: contractId ? parseInt(contractId, 10) : undefined,
-      userId,
-      actionType,
+      userId: userId || undefined,
+      actionType: actionType || undefined,
       limit,
       offset
     });

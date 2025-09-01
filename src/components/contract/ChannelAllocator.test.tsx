@@ -1,21 +1,21 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ChannelAllocator } from './ChannelAllocator';
-import type { ChannelAllocation } from '@/types/contract';
+import ChannelAllocator from './ChannelAllocator';
+import type { ContractFormInput } from '@/types/contract';
 
 describe('ChannelAllocator', () => {
   const mockOnChange = vi.fn();
   const defaultProps = {
     totalAmount: 1000,
-    value: {
+    allocations: {
       inline_percentage: 50,
       ecomm_percentage: 50,
       inline_amount: 500,
       ecomm_amount: 500
-    } as ChannelAllocation,
+    } as ContractFormInput['allocations'],
     onChange: mockOnChange,
-    errors: {}
+    error: undefined
   };
 
   beforeEach(() => {

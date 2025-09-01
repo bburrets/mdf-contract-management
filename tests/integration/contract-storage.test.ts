@@ -1,5 +1,9 @@
 import { describe, it, expect, beforeAll, afterAll, beforeEach, afterEach, vi } from 'vitest';
 import { NextRequest } from 'next/server';
+import { GET as contractsGET, POST as contractsPOST } from '@/app/api/contracts/route';
+import { GET as contractDetailGET, PUT as contractDetailPUT, DELETE as contractDetailDELETE } from '@/app/api/contracts/[id]/route';
+import { GET as allocationsGET, POST as allocationsPOST } from '@/app/api/allocations/route';
+import { GET as auditGET } from '@/app/api/audit/route';
 
 // Mock NextAuth session for authenticated requests  
 const mockSession = {

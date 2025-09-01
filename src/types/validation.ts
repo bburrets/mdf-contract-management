@@ -55,13 +55,9 @@ export const ValidationMessages = {
 };
 
 // Contract-specific validation schemas
-export const contractScopeSchema = z.enum(['Channel', 'AllStyle'], {
-  errorMap: () => ({ message: 'Scope must be either "Channel" or "AllStyle"' })
-});
+export const contractScopeSchema = z.enum(['Channel', 'AllStyle']);
 
-export const channelCodeSchema = z.enum(['Inline', 'Ecomm'], {
-  errorMap: () => ({ message: 'Channel must be either "Inline" or "Ecomm"' })
-});
+export const channelCodeSchema = z.enum(['Inline', 'Ecomm']);
 
 export const allocationAmountSchema = z.number()
   .min(0, 'Allocation amount must be non-negative')

@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { StyleSelector } from './StyleSelector';
+import StyleSelector from './StyleSelector';
 import type { Style } from '@/types/contract';
 
 // Mock fetch
@@ -19,21 +19,27 @@ const mockStyles: Style[] = [
     item_number: 'ITM001',
     item_desc: 'Test Item 1',
     season: 'Spring 2024',
-    business_line: 'Women'
+    business_line: 'Women',
+    created_at: '2024-01-01T00:00:00Z',
+    updated_at: '2024-01-01T00:00:00Z'
   },
   {
     style_number: 'STY002',
     item_number: 'ITM002',
     item_desc: 'Test Item 2',
     season: 'Summer 2024',
-    business_line: 'Men'
+    business_line: 'Men',
+    created_at: '2024-01-01T00:00:00Z',
+    updated_at: '2024-01-01T00:00:00Z'
   },
   {
     style_number: 'STY003',
     item_number: 'ITM003',
     item_desc: 'Another Style',
     season: 'Fall 2024',
-    business_line: 'Kids'
+    business_line: 'Kids',
+    created_at: '2024-01-01T00:00:00Z',
+    updated_at: '2024-01-01T00:00:00Z'
   }
 ];
 
